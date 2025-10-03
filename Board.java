@@ -12,7 +12,6 @@ public void paintPolygon(Graphics brush, Polygon p) {
 		   yPoints[i] = y;
 		   
 	   }
-	   brush.drawPolygon(xPoints, yPoints, points.length);	
 	   brush.fillPolygon(xPoints, yPoints, points.length);
 	   
    }
