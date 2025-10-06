@@ -1,4 +1,5 @@
 package game;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -34,5 +35,12 @@ public class Spaceship extends Polygon implements KeyListener {
 	
 	public void keyTyped(KeyEvent e) {
 		//leave empty
+	}
+	
+	private class powerUp extends Polygon{
+		public powerUp() {
+			super(inShape, inPosition, inRotation);
+		}
+		
 	}
 }
