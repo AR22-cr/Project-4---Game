@@ -5,12 +5,12 @@ import java.awt.event.KeyListener;
 
 public class Spaceship extends Polygon implements KeyListener {
 	private int numLives;
-	private Powerup powerup; //Make PowerUp class
+	//private PowerUp powerup; //Make PowerUp class
 	
 	public Spaceship() {
-		super(inShape, inPosition, inRotation);
+		super(new Point[] {new Point(0,0), new Point(50,0), new Point(50,50), new Point(0,50)}, new Point(375,500), 0);
 		numLives = 3;
-		powerup = new Powerup(nothing)
+		//powerup = new PowerUp(0);
 	}
 	
 	public int getLives() {
@@ -21,26 +21,48 @@ public class Spaceship extends Polygon implements KeyListener {
 		numLives -= 1;
 	}
 	
-	public void collectPowerUp(Powerup powerup) {
-		this.powerup = powerup;
-	}
-	
 	public void keyPressed(KeyEvent e) {
-		//implement
+		if (e.getKeyCode() == KeyEvent.VK_LEFT && position.x > 115)
+		{
+			setPosition(new Point(position.x - 275, 500));
+		}
+		
+		if (e.getKeyCode() == KeyEvent.VK_RIGHT && position.x < 650)
+		{
+			setPosition(new Point(position.x + 275, 500));
+		}
 	}
 	
 	public void keyReleased(KeyEvent e) {
-		//implement
+		// implement later
 	}
 	
 	public void keyTyped(KeyEvent e) {
 		//leave empty
 	}
 	
-	private class powerUp extends Polygon{
-		public powerUp() {
+	/*public void collectPowerUp(PowerUp powerUp) {
+		this.powerUp = powerUp;
+	}
+	
+	private class PowerUp extends Polygon{
+		private int powerUp;
+		public PowerUp(int powerUp) {
 			super(inShape, inPosition, inRotation);
+			this.powerUp = powerUp;
 		}
 		
+		public void genPowerUp() {
+			int powerUp = (int) (3 * Math.random());
+			//check powerUp and generate appropriate powerUp on the board
+			if (powerUp == 0) {
+				)
+			}
+		}*/
+		
+		
+		
+		
+		
+		
 	}
-}
