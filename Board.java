@@ -1,17 +1,17 @@
-System.out.println("This is the board!!!");
-public void paintPolygon(Graphics brush, Polygon p) {
-	   Point[] points = p.getPoints();
-	   int [] xPoints = new int[points.length];
-	   int [] yPoints = new int[points.length];
-	   
-	   for (int i = 0; i < points.length; i++) {
-		   int x = (int) points[i].x;
-		   int y = (int) points[i].y;
-		   
-		   xPoints[i] = x;
-		   yPoints[i] = y;
-		   
-	   }
-	   brush.fillPolygon(xPoints, yPoints, points.length);
-	   
-   }
+package game;
+
+public class Board extends Polygon {
+	public Board() {
+		super(new Point[] {new Point(0,0), new Point(266.7,0), new Point(533.3,0), new Point(799,0), new Point(799,600), new Point(533.3,600), new Point(533.3,0), new Point(266.7,0), new Point(266.7,600), new Point(1,600)}, new Point(0,0), 0);
+	}
+	
+	public void addObstacle() {
+		//implement after making obstacle interface
+	}
+	
+	public void addPolygon() {
+		//implement
+	}
+
+}
+
