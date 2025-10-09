@@ -9,7 +9,7 @@ public class Spaceship extends Polygon implements KeyListener {
 	private PowerUp powerup; //Make PowerUp class
 	
 	public Spaceship() {
-		super(new Point[] {new Point(0,0), new Point(50,0), new Point(50,50), new Point(0,50)}, new Point(375,500), 0);
+		super(new Point[] {new Point(50,0), new Point(70,30), new Point(70, 55), new Point(100, 75), new Point(50, 74), new Point(0, 75), new Point(30,55), new Point(30,30)}, new Point(350, 450), 0);
 		numLives = 3;
 		//powerup = new PowerUp(0);
 	}
