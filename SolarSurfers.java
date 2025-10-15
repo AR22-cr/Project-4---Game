@@ -9,19 +9,23 @@ NOTE: This class is the metaphorical "main method" of your program,
 */
 import java.awt.*;
 import java.awt.event.*;
+import Spaceship;
 
 class SolarSurfers extends Game {
 	static int counter = 0;
-	private Polygon spaceship;
-	private Polygon board;
+	private Spaceship spaceship;
+	private Board board;
+	private PowerUp powerup;
 
   public SolarSurfers() {
-    super("YourGameName!",800,600);
+    super("Solar Surfers!",800,600);
     this.setFocusable(true);
 	this.requestFocus();
     spaceship = new Spaceship();
-    this.addKeyListener((KeyListener) spaceship);
+    KeyListener kl = spaceship.keyListener();
+    this.addKeyListener(kl);
     board = new Board();
+    powerup = new PowerUp((int) (Math.random() * 3));
   }
   
 	public void paint(Graphics brush) {
@@ -31,6 +35,16 @@ class SolarSurfers extends Game {
     	brush.setColor(Color.white);
     	paintPolygon(brush, spaceship);
     	paintPolygon(brush, board);
+    	
+    	brush.setColor(Color.green);
+    	paintPolygon(brush, powerup);
+    	moveObject(powerup);
+    	
+    	if (powerup.position.y > 600 || spaceship.collides(powerup))
+    	{
+    		powerup = new PowerUp((int) (Math.random() * 3));
+    	}
+    	
     	
    }
 	
@@ -57,6 +71,11 @@ class SolarSurfers extends Game {
 	   }
 	   	   
    }
+   
+   public void moveObject(Polygon p) {
+	   
+	   p.position.y++;
+   }
 	
 
   
@@ -64,6 +83,10 @@ class SolarSurfers extends Game {
 		SolarSurfers a = new SolarSurfers();
 		a.repaint();
 		
+		/*Spaceship s = new Spaceship();
+		System.out.println(s.getLives());
+		s.loseLife();
+		System.out.println(s.getLives());*/
 					
   }
 }
