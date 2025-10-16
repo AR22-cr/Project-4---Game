@@ -29,9 +29,6 @@ class SolarSurfers extends Game {
 	private Font font;
 	private Font font1;
 	
-	// Keeps track of how many obstacles were dodged
-	private int score;
-	
 	// Displayed when the game is over
 	private GameOver gameOver;
 	
@@ -60,8 +57,7 @@ class SolarSurfers extends Game {
     font = new Font("SansSerif", Font.BOLD, 24);
     font1 = new Font("Times New Roman", Font.BOLD, 100);
     
-    // Start at 0 for the score and counters for the beginning of the game
-    score = 0;
+    // Start at 0 for counter at the beginning of the game
     counter = 0;
     
     // Create an instance of the GameOver class that will be displayed when the game is over
@@ -165,21 +161,12 @@ class SolarSurfers extends Game {
     	
    }
 	
-   /*
-    * Takes a Game.Polygon object and obtains its x and y points. 
-    * The method stores these points in two separate arrays.
-    * The method draws the Board object without filling it, but draws and fills every other object.
-    * @param brush 	A graphics object that draws and fills the Polygon.
-    * @param p 		A Game.Polygon object that is stripped down to it's points and drawn and/or filled.
-    */
-	public void paintPolygon(Graphics brush, Polygon p) {
-	   //Stores the Game.Polygon's points in an array, and creates arrays for its x and y points.
-		Point[] points = p.getPoints();
+   public void paintPolygon(Graphics brush, Polygon p) {
+	   Point[] points = p.getPoints();
 	   int [] xPoints = new int[points.length];
 	   int [] yPoints = new int[points.length];
 	   
-	   //Casts the x and y points to ints and stores them in their respective arrays.
-		for (int i = 0; i < points.length; i++) {
+	   for (int i = 0; i < points.length; i++) {
 		   int x = (int) points[i].x;
 		   int y = (int) points[i].y;
 		   
@@ -226,7 +213,7 @@ class SolarSurfers extends Game {
 	   private String message;
 	   private int score;
 	   
-	   // Constructs the GameOver with the correct message and a starting score of 0. Score will not be increased if immunity is used to block obstacles.
+	   // Constructs the GameOver with the correct message and a starting score of 0.
 	   public GameOver() {
 		   this.message = "GAME OVER!";
 		   this.score = 0;
