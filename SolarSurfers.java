@@ -166,12 +166,21 @@ class SolarSurfers extends Game {
     	
    }
 	
-   public void paintPolygon(Graphics brush, Polygon p) {
-	   Point[] points = p.getPoints();
+   /*
+    * Takes a Game.Polygon object and obtains its x and y points. 
+    * The method stores these points in two separate arrays.
+    * The method draws the Board object without filling it, but draws and fills every other object.
+    * @param brush 	A graphics object that draws and fills the Polygon.
+    * @param p 		A Game.Polygon object that is stripped down to it's points and drawn and/or filled.
+    */
+	public void paintPolygon(Graphics brush, Polygon p) {
+	   //Stores the Game.Polygon's points in an array, and creates arrays for its x and y points.
+		Point[] points = p.getPoints();
 	   int [] xPoints = new int[points.length];
 	   int [] yPoints = new int[points.length];
 	   
-	   for (int i = 0; i < points.length; i++) {
+	   //Casts the x and y points to ints and stores them in their respective arrays.
+		for (int i = 0; i < points.length; i++) {
 		   int x = (int) points[i].x;
 		   int y = (int) points[i].y;
 		   
