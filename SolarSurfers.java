@@ -226,7 +226,7 @@ class SolarSurfers extends Game {
 	   private String message;
 	   private int score;
 	   
-	   // Constructs the GameOver with the correct message and a starting score of 0.
+	   // Constructs the GameOver with the correct message and a starting score of 0. Score will not be increased if immunity is used to block obstacles.
 	   public GameOver() {
 		   this.message = "GAME OVER!";
 		   this.score = 0;
