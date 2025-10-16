@@ -1,3 +1,11 @@
+/*
+ * @author Sara Mallon, Balaadhithya Ravikumar
+ * CLASS: Alien
+ * DESCRIPTION: Alien is an obstacle that comes down the board while spinning.
+ * 				It is the fastest obstacle.
+ * USAGE: When the spaceship hits an alien, the spaceship loses a life unless the spaceship has a powerup
+ */
+
 package game;
 
 public class Alien extends Polygon implements Obstacle {
