@@ -2,9 +2,8 @@
 package game;
 
 /*
- * 
- * CLASS: SolarSurferoids
- * DESCRIPTION: Extending Game, SolarSurfer is all in the paint method.
+ * CLASS: SolarSurfers
+ * DESCRIPTION: Extending Game, SolarSurfers is all in the paint method.
  * NOTE: This class is the metaphorical "main method" of your program,
  * 		it is your control center.
 */
@@ -14,7 +13,7 @@ import Spaceship;
 
 /*
  * @author Sara Mallon, Balaadhithya Ravikumar
- * CLASS: SolarSurfer
+ * CLASS: SolarSurfers
  * DESCRIPTION: Creates the game and runs it
  * USAGE: Creates a board and places obstacles, power ups, and a spaceship on it to play the game
  */
