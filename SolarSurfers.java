@@ -137,12 +137,12 @@ class SolarSurfers extends Game {
 		  
 		  // If the marsRock is below the screen or hits the spaceship, make a new one in a new lane
 		  if (marsRock.checkCollision(spaceship) || marsRock.position.y > 600) {
-			  marsRock = new MarsRock((int) (Math.random() * 2));
+			  marsRock = new MarsRock((int) (Math.random() * 3));
 		  }
         
 		  // If the alien is below the screen or hits the spaceship, make a new one in a new lane
 		  if (alien.checkCollision(spaceship) || alien.position.y > 600) {
-			  alien = new Alien((int) (Math.random() * 2));
+			  alien = new Alien((int) (Math.random() * 3));
 		  }
 		  
 		  // If the marsRock or alien hit the spaceship, try to take a life away
